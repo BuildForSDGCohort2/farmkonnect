@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'phone'
     ];
 
     /**
@@ -36,4 +36,45 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function roles(){
+        return $this->belongsToMany(Role::class)->withTimestamps();
+    }
+
+    public function assignRole($role)
+    {
+        return $this->roles()->save(
+            Role::whereName($role)->firstOrFail());
+    }
+
+    public function authorizeRoles($roles){
+        if (is_array($roles)) {
+            return $this->hasAnyRole($roles) || 
+            dd('something is wrong here');
+        }
+        return $this->hasRole($roles) || dd('No such role error');
+    }
+
+    public function hasAnyRole($roles)
+    {
+        return null !== $this->roles()->whereIn('name', $roles)->first();
+    }
+
+    public function hasRole($role)
+    {
+    return null !== $this->roles()->where('name', $role)->first();
+    }
+    
+    // public function orders(){
+    //     return $this->hasMany('App\Order');
+    // }
+
+    public function avatarUrl(){
+
+        return 'images/profile/'.$this->avatar_url;
+    }
+
+    public function products(){
+        return $this->hasMany('App\Product');
+    }
 }
