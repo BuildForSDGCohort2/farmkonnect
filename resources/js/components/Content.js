@@ -27,7 +27,7 @@ const Content = () => (
         </div>
 
         <div className="col-12 col-lg-6">
-            <img src=" {{ asset('images/transformation_image.jpg') }} " data-src="{{ asset('images/transformation_image.jpg') }}" alt="worship testimony" 
+            <img src=" {{ asset('images/transformation_image.jpg') }} " data-src="{{ asset('images/transformation_image.jpg') }}" alt="farmkonnect" 
             className="img img-fluid rounded m-0 image_hover_effect lazyload blur-up" width="500" height="300" />
         </div> 
     </div>
@@ -45,7 +45,7 @@ const Content = () => (
 
 
     <div className="col-12 col-lg-6">
-        <img src=" {{ asset('images/streaming.jpg') }}" data-src=" {{ asset('images/streaming.jpg') }} " alt="worship testimony" 
+        <img src=" {{ asset('images/streaming.jpg') }}" data-src=" {{ asset('images/streaming.jpg') }} " alt="farmkonnect" 
         className="img img-fluid rounded m-0 image_hover_effect lazyload blur-up" width="500" height="300" />
         </div>
     </div>
@@ -62,7 +62,7 @@ const Content = () => (
 
 
     <div className="col-12 col-lg-6">
-        <img src=" {{ asset('images/streaming.jpg') }}" data-src=" {{ asset('images/streaming.jpg') }} " alt="worship testimony" 
+        <img src=" {{ asset('images/streaming.jpg') }}" data-src=" {{ asset('images/streaming.jpg') }} " alt="testimony" 
         className="img img-fluid rounded m-0 image_hover_effect lazyload blur-up" width="500" height="300" />
         </div>
     </div>
@@ -79,7 +79,7 @@ const Content = () => (
 
 
     <div className="col-12 col-lg-6">
-        <img src=" {{ asset('images/streaming.jpg') }}" data-src=" {{ asset('images/streaming.jpg') }} " alt="worship testimony" 
+        <img src=" {{ asset('images/streaming.jpg') }}" data-src=" {{ asset('images/streaming.jpg') }} " alt="farmkonnect" 
         className="img img-fluid rounded m-0 image_hover_effect lazyload blur-up" width="500" height="300" />
         </div>
     </div> 

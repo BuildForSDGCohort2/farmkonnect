@@ -23,6 +23,15 @@ window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+
+let token = document.head.querySelector('meta[name="crsf-token"]');
+
+if(token){
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+}else{
+    console.error('CRSF token not found: https://laravel.com/docs/csrf#crsf-x-crsf-token');
+}
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

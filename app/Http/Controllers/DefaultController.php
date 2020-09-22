@@ -14,14 +14,12 @@ class DefaultController extends Controller
 
 
     public function products(){
-
         $products =  Product::where('status', true)
-                        ->orderBy('created_at', 'desc')
-                        ->withCount(['users' => function ($query){
-                                $query->where('status', true);
-                        }])
-                        ->get();
-
+            ->orderBy('created_at', 'desc')
+            ->withCount(['users' => function ($query){
+                $query->where('status', true);
+            }])->get();
+            
         return $products-toJson();
     }
     

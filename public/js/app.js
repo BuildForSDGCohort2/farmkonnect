@@ -69819,6 +69819,13 @@ try {
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+var token = document.head.querySelector('meta[name="crsf-token"]');
+
+if (token) {
+  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+} else {
+  console.error('CRSF token not found: https://laravel.com/docs/csrf#crsf-x-crsf-token');
+}
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
@@ -69951,7 +69958,7 @@ var Content = function Content() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: " {{ asset('images/transformation_image.jpg') }} ",
     "data-src": "{{ asset('images/transformation_image.jpg') }}",
-    alt: "worship testimony",
+    alt: "farmkonnect",
     className: "img img-fluid rounded m-0 image_hover_effect lazyload blur-up",
     width: "500",
     height: "300"
@@ -69969,7 +69976,7 @@ var Content = function Content() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: " {{ asset('images/streaming.jpg') }}",
     "data-src": " {{ asset('images/streaming.jpg') }} ",
-    alt: "worship testimony",
+    alt: "farmkonnect",
     className: "img img-fluid rounded m-0 image_hover_effect lazyload blur-up",
     width: "500",
     height: "300"
@@ -69987,7 +69994,7 @@ var Content = function Content() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: " {{ asset('images/streaming.jpg') }}",
     "data-src": " {{ asset('images/streaming.jpg') }} ",
-    alt: "worship testimony",
+    alt: "testimony",
     className: "img img-fluid rounded m-0 image_hover_effect lazyload blur-up",
     width: "500",
     height: "300"
@@ -70005,7 +70012,7 @@ var Content = function Content() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: " {{ asset('images/streaming.jpg') }}",
     "data-src": " {{ asset('images/streaming.jpg') }} ",
-    alt: "worship testimony",
+    alt: "farmkonnect",
     className: "img img-fluid rounded m-0 image_hover_effect lazyload blur-up",
     width: "500",
     height: "300"
@@ -70136,6 +70143,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 
@@ -70172,7 +70182,7 @@ var Header = function Header() {
     to: "/"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "{{ URL::to('images/nav-brand.jpg' ) }}",
-    alt: "Ladypograce Logo",
+    alt: "farmkonnect Logo",
     width: "30",
     height: "30",
     title: "Farmkonnect Logo",
@@ -70206,8 +70216,8 @@ var Header = function Header() {
     className: "nav-link m-0 p-0",
     to: "/"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "{{ URL::to('images/nav-brand.jpg' ) }}",
-    alt: "Ladypograce Logo",
+    src: "images/nav-brand.jpg",
+    alt: "farmkonnect Logo",
     width: "30",
     height: "30",
     title: "Farmkonnect Logo",
@@ -70251,7 +70261,7 @@ var Header = function Header() {
     name: "keyword",
     id: "keyword-search",
     className: "form-control py-4 keyword_search",
-    placeholder: "Search for designs................",
+    placeholder: "Search for products................",
     "aria-label": "keyword-search",
     "aria-describedby": "basic-addon1"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -70266,12 +70276,12 @@ var Header = function Header() {
     to: "/products"
   }, "Products")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "nav-link",
     to: "/register"
   }, "Register")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "nav-link",
     to: "/login"
   }, "Login"))))));

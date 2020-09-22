@@ -1,7 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { render } from 'react-dom';
 
-const Header = ()  => (
+    const Header = () => ( 
     <nav className="navbar navbar-expand-md sticky-top shadow-sm mb-0" role="navigation">
     <div className="container-fluid">
     <button className="navbar-toggler" type="button" 
@@ -15,7 +16,7 @@ const Header = ()  => (
     
    <ul className="nav navbar-nav d-lg-none ml-auto visible-xs navbar-icons d-flex flex-row">  
         <a className="navbar-brand mb-0 d-lg-none" to='/'>
-            <img src="{{ URL::to('images/nav-brand.jpg' ) }}" alt="Ladypograce Logo" width="30" height="30" 
+            <img src="{{ URL::to('images/nav-brand.jpg' ) }}" alt="farmkonnect Logo" width="30" height="30" 
             title="Farmkonnect Logo" className="img-fluid mt-0 mb-0 d-inline-block align-top" />
         </a>
     </ul>
@@ -33,7 +34,7 @@ const Header = ()  => (
         <div className="offcanvas-header mt-3">  
             <button className="btn btn-outline-danger btn-close pull-right btn-style"> &times Close </button>
             <h5 className="py-2 text-white"><a className="nav-link m-0 p-0" to='/'>
-                <img src="{{ URL::to('images/nav-brand.jpg' ) }}" alt="Ladypograce Logo" width="30" height="30" 
+                <img src="images/nav-brand.jpg" alt="farmkonnect Logo" width="30" height="30" 
                     title="Farmkonnect Logo" className="img-fluid mt-0 mb-0 d-inline-block align-top" />
                 Farmkonnect</a>
                 </h5>
@@ -54,7 +55,7 @@ const Header = ()  => (
                     <span className="input-group-text btn-style" id="basic-addon1"><i className="fa fa-search fa-lg"></i></span>
                 </div>                        
                 <input type="text" name="keyword" id="keyword-search" 
-                className="form-control py-4 keyword_search" placeholder="Search for designs................"
+                className="form-control py-4 keyword_search" placeholder="Search for products................"
                 aria-label="keyword-search" aria-describedby="basic-addon1" />
                 <div id="search_result" className="dropdown-menu search_result_dropdown"></div>                        
             </div>
@@ -67,13 +68,13 @@ const Header = ()  => (
             </a>
         </li>
 
-        <li className="nav-item">
-            <a className="nav-link" to='/register'>Register</a>
-        </li>
-        <li className="nav-item">
-                <a className="nav-link" to='/login'>Login</a>
-        </li>
-                </ul>
+    <li className="nav-item">
+        <Link className="nav-link" to='/register'>Register</Link>
+    </li>
+    <li className="nav-item">
+            <Link className="nav-link" to='/login'>Login</Link>
+    </li> 
+              </ul>
             </div> 
         </div>
     </nav>
