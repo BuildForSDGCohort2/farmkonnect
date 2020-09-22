@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('location');
             $table->timestamp('duration')->nullable();
-            $table->tinyInteger('status')->default(0);
+            // $table->tinyInteger('status')->default(0);
             $table->integer('season_id')->nullable();
             $table->text('product_avatar')->nullable();
             $table->integer('user_id')->unsigned();
